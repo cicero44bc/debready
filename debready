@@ -30,7 +30,7 @@ case $input in
  echo "Installing git"
  sudo apt install git -y
  echo "Installing utils"
- sudo apt install lshw htop glances bluetooth-y
+ sudo apt install lshw htop glances bluetooth -y
  #ADD HERE: openvpn and homeconnection
 ;;
 
