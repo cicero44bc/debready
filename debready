@@ -6,27 +6,34 @@ read -r -p "Happy to run? [Y/n] " input
 
 case $input in
     [yY][eE][sS]|[yY])
- echo "Hold on to your butts."
+ echo "Hold on to your butts..."
  echo "Adding non-free and contrib repos (UK)"
  sudo su -c "echo 'deb http://ftp.uk.debian.org/debian/ stretch main contrib non-free' > /etc/apt/sources.list.d/debnonfree.list"
  sudo su -c "echo 'deb-src http://ftp.uk.debian.org/debian/ stretch main contrib non-free' > /etc/apt/sources.list.d/debnonfree.list"
+ echo "Updating apt"
  sudo apt update
+ echo "Running apt upgrade"
  sudo apt upgrade -y
  sudo apt update
+ echo "Installing curl"
  sudo apt install curl -y
+ echo "Installing apt-transport-https"
  sudo apt install apt-transport-https -y
- #install required intel wifi components
+ echo "Installing required intel wifi components"
  sudo apt install firmware-iwlwifi -y
- #install atom gpgkey and install atom
+ echo "Installing atom gpgkey and installing atom"
  curl -L https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add -;sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list';sudo apt update;sudo apt install atom -y
- #add backports, update and install virtualbox
+ echo "Adding backports, updating apt and installing virtualbox"
  sudo su -c "echo 'deb http://ftp.uk.debian.org/debian stretch-backports main contrib non-free' > /etc/apt/sources.list.d/debianbackports.list"; sudo apt update; sudo apt install virtualbox -y
+ echo "Installing git"
  sudo apt install git -y
- #openvpn and homeconnection
+ echo "Installing utils"
+ sudo apt install lshw htop glances bluetooth-y
+ #ADD HERE: openvpn and homeconnection
 ;;
 
     [nN][oO]|[nN])
- echo "No problem, exiting"
+ echo "No problem, exiting."
        ;;
 
     *)
