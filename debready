@@ -17,10 +17,8 @@ case $input in
  sudo apt update
  sudo apt dist-upgrade -y
  sudo apt update
- echo "Installing curl"
- sudo apt install curl -y
- echo "Installing apt-transport-https"
- sudo apt install apt-transport-https -y
+ echo "Installing utils"
+ sudo apt install curl apt-transport-https lshw htop glances expect sshfs aria2 screenfetch pv thefuck sqlitebrowser iotop iftop screen gparted inxi hdparm gconf2 gconf-service libgtk2.0-0 libudev1 libgcrypt20 libnotify4 libxtst6 libnss3 python gvfs-bin xdg-utils libcap2 bluetooth -y
  echo "Installing required intel wifi components"
  sudo apt install firmware-iwlwifi -y
  echo "Installing atom gpgkey and installing atom"
@@ -29,10 +27,8 @@ case $input in
  sudo su -c "echo 'deb http://ftp.uk.debian.org/debian stretch-backports main contrib non-free' > /etc/apt/sources.list.d/debianbackports.list"; sudo apt update; sudo apt install virtualbox -y
  echo "Installing git"
  sudo apt install git -y
- echo "Installing utils"
- sudo apt install lshw htop glances expect sshfs aria2 screenfetch pv thefuck sqlitebrowser iotop iftop screen gparted inxi hdparm gconf2 gconf-service libgtk2.0-0 libudev1 libgcrypt20 libnotify4 libxtst6 libnss3 python gvfs-bin xdg-utils libcap2 bluetooth -y
  echo "Installing tor"
- sudo su -c "apt install torbrowser-launcher -t stretch-backports"
+ sudo su -c "apt install torbrowser-launcher -t stretch-backports -y"
  echo "Installing VLC"
  sudo apt install vlc browser-plugin-vlc -y
  echo "Installing handbrake & decoders"
@@ -40,14 +36,14 @@ case $input in
  echo "Installing dropbox and nautilus components"
  wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
  .dropbox-dist/dropboxd
- sudo apt install nautilus-dropbox
+ sudo apt install nautilus-dropbox -y
  #ADD HERE: openvpn and homeconnection
  echo 'Installing openvpn & pptp & gnome components'
- sudo apt install openvpn network-manager-openvpn-gnome pptp-linux network-manager-pptp network-manager-pptp-gnome
+ sudo apt install openvpn network-manager-openvpn-gnome pptp-linux network-manager-pptp network-manager-pptp-gnome -y
  echo 'Installing deluge'
- sudo apt install deluge
+ sudo apt install deluge -y
  echo 'Installing wxhexeditor'
- sudo apt install wxhexeditor
+ sudo apt install wxhexeditor -y
  echo 'All installed, enjoy.'
 ;;
 
