@@ -31,9 +31,8 @@ case $input in
  sudo apt install git -y
  echo "Installing utils"
  sudo apt install lshw htop glances expect sshfs aria2 screenfetch pv thefuck sqlitebrowser iotop iftop screen gparted inxi hdparm gconf2 gconf-service libgtk2.0-0 libudev1 libgcrypt20 libnotify4 libxtst6 libnss3 python gvfs-bin xdg-utils libcap2 bluetooth -y
- echo "Add TOR apt sources"
- sudo su -c "printf 'deb http://deb.torproject.org/torproject.org stretch main\ndeb-src http://deb.torproject.org/torproject.org stretch main' > /etc/apt/sources.list.d/tor.list"
- #ADD TOR gpgkey?
+ echo "Installing tor"
+ sudo su -c "apt install torbrowser-launcher -t stretch-backports"
  echo "Installing VLC"
  sudo apt install vlc browser-plugin-vlc -y
  echo "Installing handbrake & decoders"
@@ -49,6 +48,7 @@ case $input in
  sudo apt install deluge
  echo 'Installing wxhexeditor'
  sudo apt install wxhexeditor
+ echo 'All installed, enjoy.'
 ;;
 
     [nN][oO]|[nN])
