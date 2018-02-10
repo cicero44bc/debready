@@ -8,4 +8,5 @@ the script.
 To use:
 
 chmod +x debready
+
 ./debready
